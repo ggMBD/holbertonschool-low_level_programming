@@ -1,8 +1,6 @@
 /**
  * main - Entry point
- * 
  * Description: 'print words'
- * 
  * Return: Always 0 (Success)
  */
 #include <stdio.h>
