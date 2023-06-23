@@ -6,7 +6,7 @@
  * @b: intiger
  * Return: somme of a and b
  */
-int add(int a,int b)
+int add(int a, int b)
 {
 	int c;
 
