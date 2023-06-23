@@ -1,13 +1,14 @@
 #include "main.h"
 /**
- *
- *
- *
+ * jack_bauer - print from 00:00 to 23:59
+ * @hour: hours counter
+ * @minute: minute counter
+ * Return: void
  */
 
 void jack_bauer(void)
 {
-	int hour , minute;
+	int hour, minute;
 
 	for (hour = 0; hour <= 23; hour++)
 	{
