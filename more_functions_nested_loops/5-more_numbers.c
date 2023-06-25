@@ -10,7 +10,7 @@ void more_numbers(void)
 
 	while (count <= 10)
 	{
-		char num = 1;
+		char num = 0;
 
 		while (num <= 14)
 		{
