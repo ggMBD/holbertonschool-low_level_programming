@@ -9,7 +9,7 @@ int main(void)
 {
 	int num;
 
-	for (num = 1; num < 100; num++)
+	for (num = 1; num <= 100; num++)
 
 	{
 		if (num % 15 == 0)
