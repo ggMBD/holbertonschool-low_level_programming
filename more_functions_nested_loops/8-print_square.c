@@ -5,15 +5,17 @@
  */
 void print_square(int size)
 {
-	int size2 = size;
-	while (size > 0)
+	int i = 0, j = 0;
+
+	while (size > i)
 	{
-		while (size2 > 0)
+		j = 0;
+		while (size > j)
 		{
-			_putchar('#' + '0');
-			size2--;
+			_putchar('#');
+			j++;
 		}
 	_putchar('\n');
-	size--;
+	i++;
 	}
 }
