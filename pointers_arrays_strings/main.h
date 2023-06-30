@@ -16,4 +16,5 @@ void reset_to_98(int *n);
 
 /* 2 */
 char *_strcat(char *dest, char *src);
+char *_strncat(char *dest, char *src, int n);
 #endif
