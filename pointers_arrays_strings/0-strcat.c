@@ -1,22 +1,26 @@
 #include "main.h"
 /**
- *
- *
- *
+ * *_strcat - add src to dest
+ * @dest: destination
+ * @src: source
+ * Return: dest
  */
 
 char *_strcat(char *dest, char *src)
 {
-	while (*dest != '\0')
+	char *rt;
+
+	while (*rt != '\0')
 	{
-		dest++;
+		rt++;
 	}
 	while(*src != '\0')
 	{
-		*dest = *src;
-		dest ++;
+		*rt = *src;
+		rt ++;
 		src++;
 	}
-	*dest = '\0';
+	*rt = '\0';
+
 	return (dest);
 }
