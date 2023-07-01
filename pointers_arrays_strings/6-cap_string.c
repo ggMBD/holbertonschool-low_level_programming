@@ -1,29 +1,37 @@
 #include "main.h"
 /**
  * cap_string - capitalizes all words of a string
- * @inp: input string
- * Return: inp
+ * @input: input string
+ * Return: input
  */
-char *cap_string(char *inp)
+char *cap_string(char *input)
 {
-	int counter;
+	int index = 0;
 
-	while (inp[counter] != '\0')
+	while (input[index] != '\0')
+
 	{
-	if(counter == 0)
-	{
-		if (inp[counter] >= 'a' && inp[counter] <= 'z')
-			inp[counter] -= 32 ;
+		if (input[index] >= 97 && input[index] <= 122)
+
+		{
+			if (index == 0)
+
+			{
+				input[index] -= 32;
+			}
+
+			if (input[index - 1] == 32 || input[index - 1] == 9 ||
+			input[index - 1] == 10 ||
+			input[index - 1] == 44 || input[index - 1] == 59 ||
+			input[index - 1] == 46 || input[index - 1] == 124 ||
+			input[index - 1] == 33 || input[index - 1] == 63 ||
+			input[index - 1] == 34 || input[index - 1] == 40 ||
+			input[index - 1] == 41 || input[index - 1] == 123 ||)
+				{
+					input[index] -= 32;
+				}
+		}
+		index++;
 	}
-	if (inp[counter - 1] == 32 || inp[counter - 1] == 124 ||
-			inp[counter - 1] == 10 ||
-			inp[counter - 1] == 44 || inp[counter - 1] == 59 ||
-			inp[counter - 1] == 46 || inp[counter - 1] == 9 ||
-			inp[counter - 1] == 33 || inp[counter - 1] == 63 ||
-			inp[counter - 1] == 34 || inp[counter - 1] == 40 ||
-			inp[counter - 1] == 41 || inp[counter - 1] == 123 )
-		inp[counter] -= 32;
-	counter++;
-	}
-	return (inp);
+	return (input);
 }
