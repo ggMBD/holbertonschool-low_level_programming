@@ -4,7 +4,7 @@
  * @inp: input string
  * Return: inp
  */
-car *cap_string(char *inp)
+char *cap_string(char *inp)
 {
 	int counter;
 
