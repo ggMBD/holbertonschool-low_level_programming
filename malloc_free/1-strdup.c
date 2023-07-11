@@ -1,5 +1,5 @@
 #include <stdlib.h>
-/** 
+/**
  * _strdup - returns a pointer
  * to a newly allocated space in memory
  * which contains a copy of the string
@@ -9,20 +9,29 @@
 */
 char *_strdup(char *str)
 {
-    char *cpy;
-    int i = 0;
+	char *cpy;
+	int msize = 1, i;
 
 	if (str == NULL)
 		return (NULL);
 
-    cpy = (char *)malloc (sizeof(*str));
+	for (i = 0; str[i]; i++)
+	{
+		msize++;
+	}
 
-    while(str[i] != '\0')
-    {
-        cpy[i] = str[i];
-        i++;
-    }
-    cpy[i] = '\0';
-    return (cpy);
-    free (cpy);
+	cpy = malloc(sizeof(char) * msize);
+
+	if (cpy == NULL)
+		return (NULL);
+
+	for (i = 0; str[i]; i++)
+	{
+		cpy[i] = str[i];
+	}
+
+	cpy[i] = '\0';
+
+	return (cpy);
+	free(cpy);
 }
