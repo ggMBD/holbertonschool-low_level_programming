@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 char *_strdup(char *str)
 {
     char *cpy;
@@ -7,7 +8,7 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
-    cpy = (char *)malloc (sizeof(str));
+    cpy = (char *)malloc (sizeof(*str));
 
     while(str[i] != '\0')
     {
@@ -16,4 +17,5 @@ char *_strdup(char *str)
     }
     cpy[i] = '\0';
     return (cpy);
+    free (cpy);
 }
