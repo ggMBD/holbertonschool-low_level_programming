@@ -7,7 +7,7 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
-    cpy = (char *)malloc (str);
+    cpy = (char *)malloc (sizeof(str));
 
     while(str[i] != '\0')
     {
