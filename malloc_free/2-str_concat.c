@@ -19,7 +19,7 @@ char *str_concat(char *s1, char *s2)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	size = strlen(s1) + strlen(s1);
+	size = strlen(s1) + strlen(s2);
 
 	cpy = (char *) malloc(sizeof(char) * (size + 1));
 
