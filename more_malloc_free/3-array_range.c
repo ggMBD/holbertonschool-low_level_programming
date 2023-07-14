@@ -3,6 +3,7 @@
  * array_range - function that creates an array of integers
  * @min: minimum
  * @max: maximum
+ * Return: array
  */
 int *array_range(int min, int max)
 {
