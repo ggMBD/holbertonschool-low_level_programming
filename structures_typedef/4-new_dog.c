@@ -12,42 +12,31 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new;
-	char *name_copy;
-	char *owner_copy;
-
 
 	new = malloc(sizeof(dog_t));
 	if (new == NULL)
 		return (NULL);
 
+	new->name = malloc(sizeof(char) * (strlen(name) + 1));
+	if (!new->name)
+	{
+		free(new);
+		return (NULL);
+	}
+
+	new->owner = malloc(sizeof(char) * (strlen(owner) + 1));
+	if (!new->owner)
+	{
+		free(new);
+		free(new->name);
+		return (NULL);
+	}
+	strcpy(new->name, name);
+	strcpy(new->owner, owner);
 	new->age = age;
-
-	if (name != NULL)
-	{
-		name_copy = malloc(strlen(name));
-		if (name_copy == NULL)
-		{
-			free(new);
-			return (NULL);
-		}
-
-		strcpy(name_copy, name);
-		new->name = name_copy;
-	}
-
-	if (owner != NULL)
-	{
-		owner_copy = malloc(strlen(owner));
-		if (owner_copy == NULL)
-		{
-			free(new);
-			return (NULL);
-		}
-
-		strcpy(owner_copy, owner);
-		new->owner = owner_copy;
-	}
 
 	return (new);
 	free(new);
+	free(new->name);
+	free(new->owner);
 }
