@@ -1,37 +1,46 @@
 #include "main.h"
+
 /**
- * cap_string - capitalizes all words of a string
- * @input: input string
- * Return: input
+ * cap_string - capitalizes everey word of a string
+ * @s: string to modify
+ *
+ * Return: the resulting string
  */
-char *cap_string(char *input)
+char *cap_string(char *s)
 {
-	int index = 0;
 
-	while (input[index] != '\0')
+	int i, j;
 
+
+	char spe[13] = {' ', '\t', '\n', ',', ';', '.',
+
+		'!', '?', '"', '(', ')', '{', '}'};
+
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (input[index] >= 97 && input[index] <= 122)
 
+		if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
+			s[i] -= 32;
+
+
+		for (j = 0; j < 13; j++)
 		{
-			if (index == 0)
-
+			if (s[i] == spe[j])
 			{
-				input[index] -= 32;
+				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+				{
+
+					s[i + 1] -= 32;
+
+				}
+
 			}
 
-			if (input[index - 1] == 32 || input[index - 1] == 9 ||
-			input[index - 1] == 10 || input[index - 1] == 124 ||
-			input[index - 1] == 44 || input[index - 1] == 59 ||
-			input[index - 1] == 46 || input[index - 1] == 124 ||
-			input[index - 1] == 33 || input[index - 1] == 63 ||
-			input[index - 1] == 34 || input[index - 1] == 40 ||
-			input[index - 1] == 41 || input[index - 1] == 123)
-				{
-					input[index] -= 32;
-				}
 		}
-		index++;
+
 	}
-	return (input);
+
+	return (s);
+
 }
