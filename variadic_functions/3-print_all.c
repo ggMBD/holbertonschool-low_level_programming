@@ -1,5 +1,5 @@
 #include "variadic_functions.h"
-
+#include <stdio.h>
 /**
  * print_all - prints all the arguments that are passed to it in any format
  * @format: format of the argument
