@@ -1,12 +1,16 @@
 #include "main.h"
-
+/**
+ * print_binary - function that prints the binary representation of a number.
+ * @n: number to print it
+ * Return void
+*/
 void print_binary(unsigned long int n)
 {
 	int num_bits = sizeof(unsigned long int) * 8;
-	int leading_zero = 1;
+	int leading_zero = 1, i;
 	unsigned long int bit;
 
-	for (int i = num_bits - 1; i >= 0; i--)
+	for (i = num_bits - 1; i >= 0; i--)
 	{
 		bit = (n >> i) & 1;
 
