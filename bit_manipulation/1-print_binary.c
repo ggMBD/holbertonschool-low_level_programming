@@ -16,7 +16,7 @@ void print_binary(unsigned long int n)
 
 		if (bit == 1 || !leading_zero)
 		{
-			printf("%lu", bit);
+			putchar(bit + '0');
 			leading_zero = 0;
 		}
 	}
