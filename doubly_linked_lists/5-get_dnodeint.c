@@ -10,7 +10,7 @@
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	if (index >= (sizeof(unsigned long int) * 8))
-		return (-1);
+		return (NULL);
 	unsigned int counter = 0;
 	dlistint_t *current = head;
 
