@@ -12,7 +12,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	unsigned int counter = 0;
 	dlistint_t *current = head;
 
-	if (index >= (sizeof(unsigned int) * 8))
+	if (index >= (sizeof(long int) * 16))
 		return (NULL);
 	for (; counter < index; counter++)
 	{
