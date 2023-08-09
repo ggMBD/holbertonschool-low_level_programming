@@ -39,11 +39,11 @@ int main(int argc, char *argv[])
 	char buffer[1024];
 
 	if (argc != 3)
-		error_exit_s("Usage: %s file_from file_to\n", argv[0], 97);
+		error_exit_s("Usage: cp file_from file_to\n", "", 97);
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
 		error_exit_s("Error: Can't read from file %s\n", file_from, 98);
-	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
 		close(fd_from);
@@ -67,8 +67,8 @@ int main(int argc, char *argv[])
 		error_exit_s("Error: Can't read from file %s\n", file_from, 98);
 	}
 	if (close(fd_from) == -1)
-		error_exit_d("Error: Can't close fd%d\n", fd_from, 100);
+		error_exit_d("Error: Can't close fd %d\n", fd_from, 100);
 	if (close(fd_to) == -1)
-		error_exit_d("Error: Can't close fd%d\n", fd_to, 100);
+		error_exit_d("Error: Can't close fd %d\n", fd_to, 100);
 	return (0);
 }
